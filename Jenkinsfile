@@ -1,27 +1,27 @@
 pipeline {
-                agent any
-                stages {
-                                stage{
-                                                (checkout codefrom github){
-steps{
-                git  branch: 'main', url: 'https://github.com/tuheen27/Dev-Ops-security-playground.git'
-}
-                                                }
-                                }
-                                stage(build the application){
-                                                stpps{
-                                                                sh '''
-                                                                pip install -r requirements.txt
-                                                                pip install 
-                                                                '''
-                                                }
-                                }
+    agent any
 
-                }
-}
+    stages {
 
-post{
-                alawyays{
-                                echo 'this is simple  pipeline to learn the jenkins file syntax' 
-                }
+        stage('Checkout code from GitHub') {
+            steps {
+                git branch: 'main', url: 'https://github.com/tuheen27/Dev-Ops-security-playground.git'
+            }
+        }
+
+        stage('Build the application') {
+            steps {
+                sh '''
+                    pip install -r requirements.txt
+                    pip install .
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'This is a simple pipeline to learn the Jenkinsfile syntax'
+        }
+    }
 }
