@@ -14,6 +14,7 @@ pipeline {
                 sh '''
                     pip install -r requirements.txt
                     pip install .
+                    python app.py
                 '''
             }
         }
