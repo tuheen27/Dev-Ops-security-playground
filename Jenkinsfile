@@ -16,8 +16,7 @@ pipeline {
                     pip install .
                     python app.py
                 '''
-                echo 'build completed!'x
-            }
+                echo 'build completed!'            }
         }
     }
 
