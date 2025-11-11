@@ -25,7 +25,11 @@ pipeline {
                     pip3 --version
                     docker --version
                 '''
+<<<<<<< HEAD
                 echo 'Environment verification completed!'
+=======
+                echo 'build completed!'x
+>>>>>>> parent of baccef3 (no update)
             }
         }
 
